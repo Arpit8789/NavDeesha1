@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile | BizMitra</title>
+    <meta name="description" content="Edit your profile on BizMitra">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                    <li><a href="../forums/forum-list.html">Forums</a></li>
+                    <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                    <li><a href="../events/events-list.html">Events</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+                
+                <div class="user-dropdown">
+                    <div class="user-dropdown-toggle">
+                        <img id="user-avatar" src="../../assets/images/avatars/default.png" alt="User Avatar" class="user-avatar">
+                        <span id="user-name">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown-menu">
+                        <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                        <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                <li><a href="../forums/forum-list.html">Forums</a></li>
+                <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                <li><a href="../events/events-list.html">Events</a></li>
+                <li class="mobile-user-menu">
+                    <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                    <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                    <a href="#" id="mobile-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="profile-edit-container">
+                <h1>Edit Your Profile</h1>
+                <p>Complete your profile to help others connect with you</p>
+                
+                <div class="profile-completion">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="profile-progress" style="width: 30%;"></div>
+                    </div>
+                    <p id="profile-completion">30% Complete</p>
+                </div>
+                
+                <!-- Profile Edit Tabs -->
+                <div class="edit-tabs">
+                    <div class="tabs-header">
+                        <a href="#basic-info" class="tab-link active" data-tab="basic-info">Basic Info</a>
+                        <a href="#professional-info" class="tab-link" data-tab="professional-info">Professional Info</a>
+                        <a href="#expertise" class="tab-link" data-tab="expertise">Expertise & Skills</a>
+                        <a href="#preferences" class="tab-link" data-tab="preferences">Preferences</a>
+                    </div>
+                    
+                    <div class="tabs-content">
+                        <!-- Basic Info Tab -->
+                        <div id="basic-info" class="tab-content active">
+                            <form id="basic-info-form" class="profile-form">
+                                <div class="form-header">
+                                    <h2>Basic Information</h2>
+                                </div>
+                                
+                                <div class="avatar-upload">
+                                    <div class="avatar-preview">
+                                        <img src="../../assets/images/avatars/default.png" alt="Avatar Preview" id="avatar-preview">
+                                    </div>
+                                    <div class="avatar-edit">
+                                        <input type="file" id="avatar-upload" accept="image/*">
+                                        <label for="avatar-upload">Change Avatar</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">Full Name</label>
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" readonly>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location">Location</label>
+                                        <input type="text" id="location" name="location" class="form-control" placeholder="City, State, Country">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bio">Bio</label>
+                                    <textarea id="bio" name="bio" rows="4" class="form-control" placeholder="Tell us about yourself..."></textarea>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Professional Info Tab -->
+                        <div id="professional-info" class="tab-content">
+                            <!-- For Entrepreneurs -->
+                            <form id="entrepreneur-form" class="profile-form">
+                                <div class="form-header">
+                                    <h2>Business Information</h2>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="business-name">Business Name</label>
+                                        <input type="text" id="business-name" name="businessName" class="form-control" placeholder="Enter your business name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="business-industry">Industry</label>
+                                        <select id="business-industry" name="industry" class="form-select">
+                                            <option value="">Select Industry</option>
+                                            <option value="Technology">Technology</option>
+                                            <option value="Healthcare">Healthcare</option>
+                                            <option value="Finance">Finance</option>
+                                            <option value="Education">Education</option>
+                                            <option value="Retail">Retail</option>
+                                            <option value="Manufacturing">Manufacturing</option>
+                                            <option value="Agriculture">Agriculture</option>
+                                            <option value="Food & Beverage">Food & Beverage</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="business-stage">Business Stage</label>
+                                        <select id="business-stage" name="stage" class="form-select">
+                                            <option value="">Select Stage</option>
+                                            <option value="Ideation">Ideation</option>
+                                            <option value="Validation">Validation</option>
+                                            <option value="Early Growth">Early Growth</option>
+                                            <option value="Scaling">Scaling</option>
+                                            <option value="Established">Established</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="founding-year">Founded In</label>
+                                        <input type="number" id="founding-year" name="foundingYear" class="form-control" placeholder="Year" min="1900" max="2025">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="team-size">Team Size</label>
+                                        <input type="number" id="team-size" name="teamSize" class="form-control" placeholder="Number of employees" min="1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="business-website">Website</label>
+                                        <input type="url" id="business-website" name="website" class="form-control" placeholder="https://example.com">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="business-description">Business Description</label>
+                                    <textarea id="business-description" name="description" rows="4" class="form-control" placeholder="Describe your business..."></textarea>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </form>
+                            
+                            <!-- For Mentors -->
+                            <form id="mentor-form" class="profile-form">
+                                <div class="form-header">
+                                    <h2>Professional Information</h2>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="current-role">Current Role</label>
+                                        <input type="text" id="current-role" name="currentRole" class="form-control" placeholder="Enter your current role">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="company">Company</label>
+                                        <input type="text" id="company" name="company" class="form-control" placeholder="Enter your company name">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="experience">Years of Experience</label>
+                                        <input type="number" id="experience" name="experience" class="form-control" placeholder="Years" min="1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="linkedin">LinkedIn Profile</label>
+                                        <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="https://linkedin.com/in/username">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="industries">Industries Worked In</label>
+                                    <select id="industries" name="industries" class="form-select" multiple>
+                                        <option value="Technology">Technology</option>
+                                        <option value="Healthcare">Healthcare</option>
+                                        <option value="Finance">Finance</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Retail">Retail</option>
+                                        <option value="Manufacturing">Manufacturing</option>
+                                        <option value="Agriculture">Agriculture</option>
+                                        <option value="Food & Beverage">Food & Beverage</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <small class="form-text">Hold Ctrl/Cmd to select multiple options</small>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Expertise Tab -->
+                        <div id="expertise" class="tab-content">
+                            <form id="expertise-form" class="profile-form">
+                                <div class="form-header">
+                                    <h2>Expertise & Skills</h2>
+                                </div>
+                                
+                                <!-- For Mentors: Expertise Areas -->
+                                <div class="form-group" id="expertise-group">
+                                    <label for="expertise-areas">Areas of Expertise</label>
+                                    <div class="tag-input">
+                                        <input type="text" id="expertise-areas" placeholder="Type and press Enter to add">
+                                        <div class="tag-list" id="expertise-tags">
+                                            <!-- Tags will be added dynamically -->
+                                        </div>
+                                        <input type="hidden" id="expertise-input" name="expertise">
+                                    </div>
+                                    <small class="form-text">Type an area of expertise and press Enter (e.g., Marketing, Finance, Technology)</small>
+                                </div>
+                                
+                                <!-- For Everyone: Skills -->
+                                <div class="form-group">
+                                    <label for="skills">Skills</label>
+                                    <div class="tag-input">
+                                        <input type="text" id="skills" placeholder="Type and press Enter to add">
+                                        <div class="tag-list" id="skills-tags">
+                                            <!-- Tags will be added dynamically -->
+                                        </div>
+                                        <input type="hidden" id="skills-input" name="skills">
+                                    </div>
+                                    <small class="form-text">Type a skill and press Enter (e.g., Digital Marketing, Data Analysis, UI/UX Design)</small>
+                                </div>
+                                
+                                <!-- For Entrepreneurs: Challenges -->
+                                <div class="form-group" id="challenges-group">
+                                    <label for="challenges">Current Challenges</label>
+                                    <div class="tag-input">
+                                        <input type="text" id="challenges" placeholder="Type and press Enter to add">
+                                        <div class="tag-list" id="challenges-tags">
+                                            <!-- Tags will be added dynamically -->
+                                        </div>
+                                        <input type="hidden" id="challenges-input" name="challenges">
+                                    </div>
+                                    <small class="form-text">Type a challenge and press Enter (e.g., Funding, Marketing, Product Development)</small>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Preferences Tab -->
+                        <div id="preferences" class="tab-content">
+                            <form id="preferences-form" class="profile-form">
+                                <div class="form-header">
+                                    <h2>Preferences</h2>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="preferred-language">Preferred Language</label>
+                                    <select id="preferred-language" name="preferredLanguage" class="form-select">
+                                        <option value="en">English</option>
+                                        <option value="hi">Hindi</option>
+                                        <option value="gu">Gujarati</option>
+                                        <option value="bn">Bengali</option>
+                                        <option value="ta">Tamil</option>
+                                        <option value="te">Telugu</option>
+                                        <option value="mr">Marathi</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- For Mentors: Mentorship Preferences -->
+                                <div id="mentor-preferences">
+                                    <div class="form-group">
+                                        <label for="availability">Availability</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="availability" name="available" checked>
+                                            <label for="availability"></label>
+                                            <span class="toggle-label">Available for new mentees</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="hours-per-week">Hours Available Per Week</label>
+                                        <input type="number" id="hours-per-week" name="availableHours" class="form-control" placeholder="Hours" min="1" max="40">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="preferred-stages">Preferred Business Stages</label>
+                                        <select id="preferred-stages" name="preferredStages" class="form-select" multiple>
+                                            <option value="Ideation">Ideation</option>
+                                            <option value="Validation">Validation</option>
+                                            <option value="Early Growth">Early Growth</option>
+                                            <option value="Scaling">Scaling</option>
+                                            <option value="Established">Established</option>
+                                        </select>
+                                        <small class="form-text">Hold Ctrl/Cmd to select multiple options</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="preferred-industries">Preferred Industries</label>
+                                        <select id="preferred-industries" name="preferredIndustries" class="form-select" multiple>
+                                            <option value="Technology">Technology</option>
+                                            <option value="Healthcare">Healthcare</option>
+                                            <option value="Finance">Finance</option>
+                                            <option value="Education">Education</option>
+                                            <option value="Retail">Retail</option>
+                                            <option value="Manufacturing">Manufacturing</option>
+                                            <option value="Agriculture">Agriculture</option>
+                                            <option value="Food & Beverage">Food & Beverage</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <small class="form-text">Hold Ctrl/Cmd to select multiple options</small>
+                                    </div>
+                                </div>
+                                
+                                <!-- For Entrepreneurs: Mentorship Preferences -->
+                                <div id="entrepreneur-preferences">
+                                    <div class="form-group">
+                                        <label for="mentor-industries">Preferred Mentor Industries</label>
+                                        <select id="mentor-industries" name="mentorIndustries" class="form-select" multiple>
+                                            <option value="Technology">Technology</option>
+                                            <option value="Healthcare">Healthcare</option>
+                                            <option value="Finance">Finance</option>
+                                            <option value="Education">Education</option>
+                                            <option value="Retail">Retail</option>
+                                            <option value="Manufacturing">Manufacturing</option>
+                                            <option value="Agriculture">Agriculture</option>
+                                            <option value="Food & Beverage">Food & Beverage</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <small class="form-text">Hold Ctrl/Cmd to select multiple options</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="mentor-expertise">Preferred Mentor Expertise</label>
+                                        <select id="mentor-expertise" name="mentorExpertise" class="form-select" multiple>
+                                            <option value="Marketing">Marketing</option>
+                                            <option value="Finance">Finance</option>
+                                            <option value="Technology">Technology</option>
+                                            <option value="Operations">Operations</option>
+                                            <option value="Legal">Legal</option>
+                                            <option value="Product Development">Product Development</option>
+                                            <option value="Sales">Sales</option>
+                                            <option value="Strategy">Strategy</option>
+                                            <option value="Fundraising">Fundraising</option>
+                                        </select>
+                                        <small class="form-text">Hold Ctrl/Cmd to select multiple options</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="notification-preferences">Notification Preferences</label>
+                                    <div class="checkbox-group">
+                                        <div class="form-check">
+                                            <input type="checkbox" id="email-notifications" name="emailNotifications" class="form-check-input" checked>
+                                            <label for="email-notifications" class="form-check-label">Email Notifications</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="connection-notifications" name="connectionNotifications" class="form-check-input" checked>
+                                            <label for="connection-notifications" class="form-check-label">Connection Requests</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="message-notifications" name="messageNotifications" class="form-check-input" checked>
+                                            <label for="message-notifications" class="form-check-label">New Messages</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="event-notifications" name="eventNotifications" class="form-check-input" checked>
+                                            <label for="event-notifications" class="form-check-label">Event Reminders</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                        <span>BizMitra</span>
+                    </div>
+                    <p>Your trusted companion in the entrepreneurial journey. Connect, learn, and grow with BizMitra.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                        <li><a href="../forums/forum-list.html">Forums</a></li>
+                        <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                        <li><a href="../events/events-list.html">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Startup Toolkit</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@bizmitra.com</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BizMitra. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/profile.js"></script>
+    <script src="../../js/chatbot.js"></script>
+</body>
+</html>

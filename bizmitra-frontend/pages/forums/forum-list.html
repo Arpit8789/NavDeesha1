@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forums | BizMitra</title>
+    <meta name="description" content="Join discussions and get answers to your business questions on BizMitra Forums">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/forums.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="WhatsApp Image 2025-03-21 at 04.22.56_d40f2627 - Copy (2).jpg" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                    <li><a href="forum-list.html" class="active">Forums</a></li>
+                    <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                    <li><a href="../events/events-list.html">Events</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+                
+                <div class="user-dropdown">
+                    <div class="user-dropdown-toggle">
+                        <img id="user-avatar" src="../../assets/images/avatars/default.png" alt="User Avatar" class="user-avatar">
+                        <span id="user-name">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown-menu">
+                        <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                        <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                <li><a href="forum-list.html" class="active">Forums</a></li>
+                <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                <li><a href="../events/events-list.html">Events</a></li>
+                <li class="mobile-user-menu">
+                    <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                    <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                    <a href="#" id="mobile-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="forum-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Community Forums</h1>
+                    <p>Ask questions, share knowledge, and connect with fellow entrepreneurs</p>
+                    <div class="forum-actions">
+                        <a href="create-post.html" class="btn btn-primary">Start a Discussion</a>
+                        <div class="search-container">
+                            <div class="search-input">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="forum-search" placeholder="Search discussions...">
+                            </div>
+                            <button class="btn btn-primary search-btn" id="search-btn">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container forum-container">
+            <div class="forum-layout">
+                <!-- Categories Sidebar -->
+                <div class="categories-sidebar">
+                    <div class="sidebar-header">
+                        <h2>Categories</h2>
+                    </div>
+                    
+                    <ul class="category-list" id="category-list">
+                        <!-- Categories will be loaded dynamically -->
+                        <li class="category-item active" data-category="all">
+                            <i class="fas fa-th-large"></i>
+                            <span>All Categories</span>
+                            <span class="post-count">0</span>
+                        </li>
+                        <li class="category-item" data-category="marketing">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Marketing</span>
+                            <span class="post-count">0</span>
+                        </li>
+                        <li class="category-item" data-category="finance">
+                            <i class="fas fa-coins"></i>
+                            <span>Finance</span>
+                            <span class="post-count">0</span>
+                        </li>
+                        <li class="category-item" data-category="technology">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Technology</span>
+                            <span class="post-count">0</span>
+                        </li>
+                        <li class="category-item" data-category="operations">
+                            <i class="fas fa-cogs"></i>
+                            <span>Operations</span>
+                            <span class="post-count">0</span>
+                        </li>
+                        <li class="category-item" data-category="legal">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Legal</span>
+                            <span class="post-count">0</span>
+                        </li>
+                        <li class="category-item" data-category="human-resources">
+                            <i class="fas fa-users"></i>
+                            <span>Human Resources</span>
+                            <span class="post-count">0</span>
+                        </li>
+                        <li class="category-item" data-category="product-development">
+                            <i class="fas fa-cube"></i>
+                            <span>Product Development</span>
+                            <span class="post-count">0</span>
+                        </li>
+                        <li class="category-item" data-category="sales">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Sales</span>
+                            <span class="post-count">0</span>
+                        </li>
+                        <li class="category-item" data-category="general">
+                            <i class="fas fa-comments"></i>
+                            <span>General Discussion</span>
+                            <span class="post-count">0</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Forum Posts -->
+                <div class="forum-content">
+                    <div class="content-header">
+                        <h2 id="current-category-title">All Discussions</h2>
+                        <div class="sort-options">
+                            <label for="sort-by">Sort by:</label>
+                            <select id="sort-by" class="form-select">
+                                <option value="recent">Most Recent</option>
+                                <option value="popular">Most Popular</option>
+                                <option value="replies">Most Replies</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="forum-posts" id="forum-posts">
+                        <!-- Forum posts will be loaded dynamically -->
+                        <div class="loading-spinner">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="pagination-btn" id="prev-page" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                        <div class="pagination-info">Page <span id="current-page">1</span> of <span id="total-pages">1</span></div>
+                        <button class="pagination-btn" id="next-page">Next <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                        <span>BizMitra</span>
+                    </div>
+                    <p>Your trusted companion in the entrepreneurial journey. Connect, learn, and grow with BizMitra.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                        <li><a href="forum-list.html">Forums</a></li>
+                        <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                        <li><a href="../events/events-list.html">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Startup Toolkit</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@bizmitra.com</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BizMitra. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/forums.js"></script>
+    <script src="../../js/chatbot.js"></script>
+</body>
+</html>

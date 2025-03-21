@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Story | BizMitra</title>
+    <meta name="description" content="Read inspiring success stories on BizMitra">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/stories.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="WhatsApp Image 2025-03-21 at 04.22.56_d40f2627 - Copy (5).jpg" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                    <li><a href="../forums/forum-list.html">Forums</a></li>
+                    <li><a href="stories-list.html" class="active">Success Stories</a></li>
+                    <li><a href="../events/events-list.html">Events</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+                
+                <div class="user-dropdown">
+                    <div class="user-dropdown-toggle">
+                        <img id="user-avatar" src="faceless-man-in-a-suit-with-a-tie-65138894.webp" alt="User Avatar" class="user-avatar">
+                        <span id="user-name">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown-menu">
+                        <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                        <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                <li><a href="../forums/forum-list.html">Forums</a></li>
+                <li><a href="stories-list.html" class="active">Success Stories</a></li>
+                <li><a href="../events/events-list.html">Events</a></li>
+                <li class="mobile-user-menu">
+                    <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                    <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                    <a href="#" id="mobile-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container story-container">
+            <div class="story-breadcrumb">
+                <a href="stories-list.html">Success Stories</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="story-title-breadcrumb">Story Title</span>
+            </div>
+            
+            <!-- Story Content -->
+            <article class="story-content" id="story-content">
+                <!-- Story will be loaded dynamically -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+            </article>
+            
+            <!-- Author Info -->
+            <div class="author-section" id="author-section">
+                <!-- Author info will be loaded dynamically -->
+            </div>
+            
+            <!-- Story Comments -->
+            <div class="comments-section">
+                <div class="section-header">
+                    <h2>Comments <span id="comment-count">(0)</span></h2>
+                </div>
+                
+                <!-- Comment Form -->
+                <div class="comment-form-container">
+                    <form id="comment-form" class="comment-form">
+                        <div class="form-group">
+                            <textarea id="comment-content" class="form-control" rows="3" placeholder="Add your comment..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Post Comment</button>
+                    </form>
+                </div>
+                
+                <!-- Comments List -->
+                <div class="comments-list" id="comments-list">
+                    <!-- Comments will be loaded dynamically -->
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Related Stories -->
+            <div class="related-stories">
+                <h2>Related Stories</h2>
+                <div class="related-stories-grid" id="related-stories">
+                    <!-- Related stories will be loaded dynamically -->
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                        <span>BizMitra</span>
+                    </div>
+                    <p>Your trusted companion in the entrepreneurial journey. Connect, learn, and grow with BizMitra.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                        <li><a href="../forums/forum-list.html">Forums</a></li>
+                        <li><a href="stories-list.html">Success Stories</a></li>
+                        <li><a href="../events/events-list.html">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Startup Toolkit</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@bizmitra.com</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BizMitra. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/stories.js"></script>
+    <script src="../../js/chatbot.js"></script>
+</body>
+</html>

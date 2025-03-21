@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories | BizMitra</title>
+    <meta name="description" content="Discover inspiring success stories from entrepreneurs on BizMitra">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/stories.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="WhatsApp Image 2025-03-21 at 04.22.56_d40f2627 - Copy (5).jpg" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                    <li><a href="../forums/forum-list.html">Forums</a></li>
+                    <li><a href="stories-list.html" class="active">Success Stories</a></li>
+                    <li><a href="../events/events-list.html">Events</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+                
+                <div class="user-dropdown">
+                    <div class="user-dropdown-toggle">
+                        <img id="user-avatar" src="../../assets/images/avatars/default.png" alt="User Avatar" class="user-avatar">
+                        <span id="user-name">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown-menu">
+                        <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                        <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                <li><a href="../forums/forum-list.html">Forums</a></li>
+                <li><a href="stories-list.html" class="active">Success Stories</a></li>
+                <li><a href="../events/events-list.html">Events</a></li>
+                <li class="mobile-user-menu">
+                    <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                    <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                    <a href="#" id="mobile-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="stories-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Success Stories</h1>
+                    <p style="color: rgb(234, 229, 229);">Get inspired by entrepreneurs who overcame challenges and achieved their goals</p>
+                    <div class="hero-actions">
+                        <a href="create-story.html" class="btn btn-primary">Share Your Story</a>
+                        <div class="search-container">
+                            <div class="search-input">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="story-search" placeholder="Search success stories...">
+                            </div>
+                            <button class="btn btn-primary search-btn" id="search-btn">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container stories-container">
+            <div class="stories-layout">
+                <!-- Filters Sidebar -->
+                <div class="filters-sidebar">
+                    <div class="filters-header">
+                        <h2>Filters</h2>
+                        <button id="reset-filters" class="btn btn-sm">Reset All</button>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Industries</h3>
+                        <div class="filter-options" id="industry-filters">
+                            <!-- Industry filters will be loaded dynamically -->
+                            <div class="filter-item">
+                                <input type="checkbox" id="industry-technology" class="industry-filter" value="Technology">
+                                <label for="industry-technology">Technology</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="industry-healthcare" class="industry-filter" value="Healthcare">
+                                <label for="industry-healthcare">Healthcare</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="industry-finance" class="industry-filter" value="Finance">
+                                <label for="industry-finance">Finance</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="industry-education" class="industry-filter" value="Education">
+                                <label for="industry-education">Education</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="industry-retail" class="industry-filter" value="Retail">
+                                <label for="industry-retail">Retail</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="industry-manufacturing" class="industry-filter" value="Manufacturing">
+                                <label for="industry-manufacturing">Manufacturing</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="industry-agriculture" class="industry-filter" value="Agriculture">
+                                <label for="industry-agriculture">Agriculture</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="industry-food" class="industry-filter" value="Food & Beverage">
+                                <label for="industry-food">Food & Beverage</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Business Stage</h3>
+                        <div class="filter-options" id="stage-filters">
+                            <div class="filter-item">
+                                <input type="checkbox" id="stage-ideation" class="stage-filter" value="Ideation">
+                                <label for="stage-ideation">Ideation</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="stage-validation" class="stage-filter" value="Validation">
+                                <label for="stage-validation">Validation</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="stage-early-growth" class="stage-filter" value="Early Growth">
+                                <label for="stage-early-growth">Early Growth</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="stage-scaling" class="stage-filter" value="Scaling">
+                                <label for="stage-scaling">Scaling</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="stage-established" class="stage-filter" value="Established">
+                                <label for="stage-established">Established</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Challenges Overcome</h3>
+                        <div class="filter-options" id="challenge-filters">
+                            <div class="filter-item">
+                                <input type="checkbox" id="challenge-funding" class="challenge-filter" value="Funding">
+                                <label for="challenge-funding">Funding</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="challenge-market" class="challenge-filter" value="Market Access">
+                                <label for="challenge-market">Market Access</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="challenge-team" class="challenge-filter" value="Team Building">
+                                <label for="challenge-team">Team Building</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="challenge-operations" class="challenge-filter" value="Operations">
+                                <label for="challenge-operations">Operations</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="challenge-scaling" class="challenge-filter" value="Scaling">
+                                <label for="challenge-scaling">Scaling</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="challenge-competition" class="challenge-filter" value="Competition">
+                                <label for="challenge-competition">Competition</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stories Content -->
+                <div class="stories-content">
+                    <div class="content-header">
+                        <h2>Inspiring Success Stories</h2>
+                        <div class="sort-options">
+                            <label for="sort-by">Sort by:</label>
+                            <select id="sort-by" class="form-select">
+                                <option value="recent">Most Recent</option>
+                                <option value="popular">Most Popular</option>
+                                <option value="trending">Trending</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="stories-grid" id="stories-grid">
+                        <!-- Stories will be loaded dynamically -->
+                        <div class="loading-spinner">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="pagination-btn" id="prev-page" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                        <div class="pagination-info">Page <span id="current-page">1</span> of <span id="total-pages">1</span></div>
+                        <button class="pagination-btn" id="next-page">Next <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                        <span>BizMitra</span>
+                    </div>
+                    <p>Your trusted companion in the entrepreneurial journey. Connect, learn, and grow with BizMitra.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                        <li><a href="../forums/forum-list.html">Forums</a></li>
+                        <li><a href="stories-list.html">Success Stories</a></li>
+                        <li><a href="../events/events-list.html">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Startup Toolkit</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@bizmitra.com</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BizMitra. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/stories.js"></script>
+    <script src="../../js/chatbot.js"></script>
+</body>
+</html>

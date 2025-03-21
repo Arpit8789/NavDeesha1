@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | BizMitra</title>
+    <meta name="description" content="View user profile on BizMitra">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                    <li><a href="../forums/forum-list.html">Forums</a></li>
+                    <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                    <li><a href="../events/events-list.html">Events</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+                
+                <div class="user-dropdown">
+                    <div class="user-dropdown-toggle">
+                        <img id="user-avatar" src="../../assets/images/avatars/default.png" alt="User Avatar" class="user-avatar">
+                        <span id="user-name">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown-menu">
+                        <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                        <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                <li><a href="../forums/forum-list.html">Forums</a></li>
+                <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                <li><a href="../events/events-list.html">Events</a></li>
+                <li class="mobile-user-menu">
+                    <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                    <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                    <a href="#" id="mobile-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="profile-container">
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <div class="profile-cover">
+                        <div class="profile-avatar">
+                            <img src="../../assets/images/avatars/default.png" alt="Profile Avatar" id="profile-avatar">
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-name-role">
+                            <h1 id="profile-name">Loading...</h1>
+                            <span class="profile-role" id="profile-role">Loading...</span>
+                        </div>
+                        <div class="profile-actions" id="profile-actions">
+                            <button class="btn btn-primary" id="connect-btn">Connect</button>
+                            <button class="btn btn-outline" id="message-btn">Message</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Profile Content -->
+                <div class="profile-content">
+                    <div class="profile-main">
+                        <!-- About Section -->
+                        <div class="profile-section">
+                            <h2>About</h2>
+                            <div class="profile-bio" id="profile-bio">
+                                Loading...
+                            </div>
+                        </div>
+                        
+                        <!-- Expertise Section (for mentors) -->
+                        <div class="profile-section" id="expertise-section">
+                            <h2>Expertise</h2>
+                            <div class="expertise-tags" id="expertise-tags">
+                                Loading...
+                            </div>
+                        </div>
+                        
+                        <!-- Business Details Section (for entrepreneurs) -->
+                        <div class="profile-section" id="business-section">
+                            <h2>Business Details</h2>
+                            <div class="business-details" id="business-details">
+                                Loading...
+                            </div>
+                        </div>
+                        
+                        <!-- Professional Experience (for mentors) -->
+                        <div class="profile-section" id="experience-section">
+                            <h2>Professional Experience</h2>
+                            <div class="experience-details" id="experience-details">
+                                Loading...
+                            </div>
+                        </div>
+                        
+                        <!-- Mentorship Details (for entrepreneurs) -->
+                        <div class="profile-section" id="mentorship-section">
+                            <h2>Mentorship</h2>
+                            <div class="mentorship-details" id="mentorship-details">
+                                Loading...
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-sidebar">
+                        <!-- Contact Information -->
+                        <div class="sidebar-section">
+                            <h3>Contact Information</h3>
+                            <ul class="contact-list" id="contact-list">
+                                <li><i class="fas fa-envelope"></i> <span id="profile-email">Loading...</span></li>
+                                <li><i class="fas fa-phone"></i> <span id="profile-phone">Loading...</span></li>
+                                <li><i class="fas fa-map-marker-alt"></i> <span id="profile-location">Loading...</span></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="sidebar-section" id="social-section">
+                            <h3>Social Profiles</h3>
+                            <ul class="social-list" id="social-list">
+                                Loading...
+                            </ul>
+                        </div>
+                        
+                        <!-- Availability (for mentors) -->
+                        <div class="sidebar-section" id="availability-section">
+                            <h3>Availability</h3>
+                            <div class="availability-status" id="availability-status">
+                                Loading...
+                            </div>
+                        </div>
+                        
+                        <!-- Skills (for both) -->
+                        <div class="sidebar-section" id="skills-section">
+                            <h3>Skills</h3>
+                            <div class="skills-tags" id="skills-tags">
+                                Loading...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Connection Request Modal -->
+    <div class="modal" id="connection-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Connect with <span id="modal-name">User</span></h2>
+                <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="connection-form">
+                    <div class="form-group">
+                        <label for="connection-message">Add a personalized message:</label>
+                        <textarea id="connection-message" rows="4" placeholder="I'd like to connect with you to discuss..."></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-outline" id="modal-cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="send-request-btn">Send Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                        <span>BizMitra</span>
+                    </div>
+                    <p>Your trusted companion in the entrepreneurial journey. Connect, learn, and grow with BizMitra.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                        <li><a href="../forums/forum-list.html">Forums</a></li>
+                        <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                        <li><a href="../events/events-list.html">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Startup Toolkit</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@bizmitra.com</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BizMitra. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/profile.js"></script>
+    <script src="../../js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Mentors | BizMitra</title>
+    <meta name="description" content="Find the right mentor for your business on BizMitra">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/mentorship.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="WhatsApp Image 2025-03-21 at 04.22.56_d40f2627 - Copy (3).jpg" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="find-mentors.html" class="active">Find Mentors</a></li>
+                    <li><a href="../forums/forum-list.html">Forums</a></li>
+                    <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                    <li><a href="../events/events-list.html">Events</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+                
+                <div class="user-dropdown">
+                    <div class="user-dropdown-toggle">
+                        <img id="user-avatar" src="../../assets/images/avatars/default.png" alt="User Avatar" class="user-avatar">
+                        <span id="user-name">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown-menu">
+                        <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                        <a href="my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="find-mentors.html" class="active">Find Mentors</a></li>
+                <li><a href="../forums/forum-list.html">Forums</a></li>
+                <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                <li><a href="../events/events-list.html">Events</a></li>
+                <li class="mobile-user-menu">
+                    <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                    <a href="my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                    <a href="#" id="mobile-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="mentorship-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Find the Perfect Mentor</h1>
+                    <p>Connect with experienced professionals who can guide your business journey</p>
+                    <div class="search-container">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="mentor-search" placeholder="Search by expertise, industry, or keyword">
+                        </div>
+                        <button class="btn btn-primary search-btn" id="search-btn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mentorship-container">
+            <div class="mentorship-layout">
+                <!-- Filters Sidebar -->
+                <div class="filters-sidebar">
+                    <div class="filters-header">
+                        <h2>Filters</h2>
+                        <button id="reset-filters" class="btn btn-sm">Reset All</button>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Expertise</h3>
+                        <div class="filter-options" id="expertise-filters">
+                            <!-- Will be populated dynamically -->
+                            <div class="loading-spinner small">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Industry</h3>
+                        <div class="filter-options" id="industry-filters">
+                            <!-- Will be populated dynamically -->
+                            <div class="loading-spinner small">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Experience</h3>
+                        <div class="range-slider">
+                            <input type="range" id="experience-slider" min="0" max="20" value="0" class="slider">
+                            <div class="range-value">
+                                <span id="experience-value">0+ years</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Language</h3>
+                        <div class="filter-options" id="language-filters">
+                            <div class="filter-item">
+                                <input type="checkbox" id="lang-en" class="language-filter" value="en">
+                                <label for="lang-en">English</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="lang-hi" class="language-filter" value="hi">
+                                <label for="lang-hi">Hindi</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="lang-gu" class="language-filter" value="gu">
+                                <label for="lang-gu">Gujarati</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="lang-bn" class="language-filter" value="bn">
+                                <label for="lang-bn">Bengali</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="lang-ta" class="language-filter" value="ta">
+                                <label for="lang-ta">Tamil</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="lang-te" class="language-filter" value="te">
+                                <label for="lang-te">Telugu</label>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" id="lang-mr" class="language-filter" value="mr">
+                                <label for="lang-mr">Marathi</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Availability</h3>
+                        <div class="filter-options">
+                            <div class="filter-item">
+                                <input type="checkbox" id="available-now" checked>
+                                <label for="available-now">Available for Mentorship</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mentors List -->
+                <div class="mentors-content">
+                    <div class="content-header">
+                        <h2>Available Mentors</h2>
+                        <div class="sort-options">
+                            <label for="sort-by">Sort by:</label>
+                            <select id="sort-by" class="form-select">
+                                <option value="relevance">Relevance</option>
+                                <option value="experience">Experience (High to Low)</option>
+                                <option value="rating">Rating (High to Low)</option>
+                                <option value="name">Name (A-Z)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mentors-list" id="mentors-list">
+
+                        <!-- Inside #mentors-list, add this for visual reference -->
+                        <div class="mentor-card">
+                            <div class="mentor-header">
+                                <img src="faceless-man-in-a-suit-with-a-tie-65138894.webp" alt="Rajesh Sharma" class="mentor-avatar">
+                                <h3 class="mentor-name">Rajesh Sharma</h3>
+                                <p class="mentor-role">Business Strategy Expert</p>
+                                <div class="mentor-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.5</span>
+                                </div>
+                                <div class="badge badge-top">Top Mentor</div>
+                            </div>
+                            <div class="mentor-body">
+                                <div class="mentor-experience">
+                                    <div class="experience-label">Experience</div>
+                                    <div class="experience-info">12+ years in Business Consulting</div>
+                                </div>
+                                <div class="mentor-expertise">
+                                    <div class="expertise-tags">
+                                        <span class="expertise-tag">Strategic Planning</span>
+                                        <span class="expertise-tag">Marketing</span>
+                                        <span class="expertise-tag">Growth</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mentor-footer">
+                                <div class="availability">
+                                    <div class="availability-indicator available"></div>
+                                    <span>Available Now</span>
+                                </div>
+                                <div class="mentor-actions">
+                                    <button class="mentor-btn mentor-btn-outline">View Profile</button>
+                                    <button class="mentor-btn mentor-btn-primary">Connect</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mentors will be loaded dynamically -->
+                        <div class="loading-spinner">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="pagination-btn" id="prev-page" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                        <div class="pagination-info">Page <span id="current-page">1</span> of <span id="total-pages">1</span></div>
+                        <button class="pagination-btn" id="next-page">Next <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Connection Request Modal -->
+        <div class="modal" id="connection-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Connect with <span id="modal-name">Mentor</span></h2>
+                    <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mentor-preview">
+                        <img src="../../assets/images/avatars/default.png" alt="Mentor Avatar" id="modal-avatar">
+                        <div class="mentor-preview-info">
+                            <h3 id="modal-role">Role</h3>
+                            <p id="modal-expertise">Expertise</p>
+                        </div>
+                    </div>
+                    <form id="connection-form">
+                        <div class="form-group">
+                            <label for="connection-message">Add a personalized message:</label>
+                            <textarea id="connection-message" rows="4" placeholder="I'd like to connect with you to discuss..."></textarea>
+                        </div>
+                        <div class="modal-actions">
+                            <button type="button" class="btn btn-outline" id="modal-cancel">Cancel</button>
+                            <button type="submit" class="btn btn-primary" id="send-request-btn">Send Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br><br><br><br><br><br>
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                        <span>BizMitra</span>
+                    </div>
+                    <p>Your trusted companion in the entrepreneurial journey. Connect, learn, and grow with BizMitra.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="find-mentors.html">Find Mentors</a></li>
+                        <li><a href="../forums/forum-list.html">Forums</a></li>
+                        <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                        <li><a href="../events/events-list.html">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Startup Toolkit</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@bizmitra.com</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BizMitra. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/mentorship.js"></script>
+    <script src="../../js/chatbot.js"></script>
+</body>
+</html>

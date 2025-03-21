@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BizMitra - Connecting entrepreneurs with mentors for business growth and success">
+    <meta name="keywords" content="business mentorship, entrepreneur, startup, business advice, mentor, mentee">
+    <title>BizMitra - Business Mentorship Platform</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/modals.css">
+    <link rel="stylesheet" href="css/components/forms.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="WhatsApp Image 2025-03-21 at 04.22.56_d40f2627 - Copy (4).jpg" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="pages/mentorship/find-mentors.html">Find Mentors</a></li>
+                    <li><a href="pages/forums/forum-list.html">Forums</a></li>
+                    <li><a href="pages/stories/stories-list.html">Success Stories</a></li>
+                    <li><a href="pages/events/events-list.html">Events</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+                
+                <!-- User is logged in -->
+                <div class="user-dropdown" id="user-dropdown" style="display: none;">
+                    <div class="user-dropdown-toggle">
+                        <img id="user-avatar" src="assets/images/avatars/default.png" alt="User Avatar" class="user-avatar">
+                        <span id="user-name">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown-menu">
+                        <a href="pages/dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="pages/profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                        <a href="pages/mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+                
+                <!-- User is not logged in -->
+                <div class="auth-buttons" id="auth-buttons">
+                    <a href="pages/auth/login.html" class="auth-btn login-btn">Login</a>
+                    <a href="pages/auth/register.html" class="auth-btn register-btn">Register</a>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pages/mentorship/find-mentors.html">Find Mentors</a></li>
+                <li><a href="pages/forums/forum-list.html">Forums</a></li>
+                <li><a href="pages/stories/stories-list.html">Success Stories</a></li>
+                <li><a href="pages/events/events-list.html">Events</a></li>
+                <li class="mobile-user-menu">
+                    <a href="pages/dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="pages/profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                    <a href="pages/mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                    <a href="#" id="mobile-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+            
+            <div class="mobile-auth-buttons">
+                <a href="pages/auth/login.html" class="auth-btn login-btn">Login</a>
+                <a href="pages/auth/register.html" class="auth-btn register-btn">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-fadeIn">Connect, Learn & Grow with BizMitra</h1>
+                <p class="animate-fadeIn">Find the right mentor to guide your entrepreneurial journey and take your business to new heights</p>
+                <div class="hero-actions animate-slideUp">
+                    <a href="pages/mentorship/find-mentors.html" class="btn btn-primary">Find a Mentor</a>
+                    <a href="pages/auth/register.html?role=mentor" class="btn btn-outline">Become a Mentor</a>
+                </div>
+                
+                <div class="hero-stats animate-fadeIn">
+                    <div class="stat-item">
+                        <div class="stat-count">2500+</div>
+                        <div class="stat-label">Entrepreneurs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-count">500+</div>
+                        <div class="stat-label">Expert Mentors</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-count">10K+</div>
+                        <div class="stat-label">Connections</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image animate-fadeIn">
+                <img src="Women-mentoring-meeting-business-1440x9999.avif" alt="Business Mentorship">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose BizMitra?</h2>
+                <p>Experience the power of mentorship through our comprehensive platform</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-fadeIn">
+                    <div class="feature-icon">
+                        <img src="2643491.png" alt="Expert Mentors">
+                    </div>
+                    <h3>Expert Mentors</h3>
+                    <p>Connect with industry experts and successful entrepreneurs who provide personalized guidance.</p>
+                </div>
+                
+                <div class="feature-card animate-fadeIn">
+                    <div class="feature-icon">
+                        <img src="community.jpg" alt="Community Forums">
+                    </div>
+                    <h3>Community Forums</h3>
+                    <p>Participate in discussions, share ideas, and get answers to your business questions.</p>
+                </div>
+                
+                <div class="feature-card animate-fadeIn">
+                    <div class="feature-icon">
+                        <img src="transparent-event-schedule-icon-free-png.webp" alt="Business Events">
+                    </div>
+                    <h3>Business Events</h3>
+                    <p>Attend workshops, webinars, and networking events to expand your knowledge and connections.</p>
+                </div>
+                
+                <div class="feature-card animate-fadeIn">
+                    <div class="feature-icon">
+                        <img src="success-icon-png-14.jpg" alt="Success Stories">
+                    </div>
+                    <h3>Success Stories</h3>
+                    <p>Get inspired by real stories of entrepreneurs who achieved success with mentor guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How BizMitra Works</h2>
+                <p>Your pathway to successful business mentorship in three simple steps</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-item animate-slideUp">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Create Your Profile</h3>
+                        <p>Sign up and complete your profile with your business details, goals, and mentorship needs.</p>
+                    </div>
+                </div>
+                
+                <div class="step-item animate-slideUp">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Find the Right Mentor</h3>
+                        <p>Browse mentor profiles, filter by industry, expertise, and language to find your perfect match.</p>
+                    </div>
+                </div>
+                
+                <div class="step-item animate-slideUp">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Connect and Grow</h3>
+                        <p>Schedule sessions, communicate through our platform, and track your business growth together.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Mentors Section -->
+    <section class="featured-mentors-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Featured Mentors</h2>
+                <p>Learn from some of the best minds in business and entrepreneurship</p>
+            </div>
+            
+            <div class="mentors-grid">
+                <div class="mentor-card animate-fadeIn">
+                    <div class="mentor-avatar">
+                        <img src="assets/images/avatars/mentor1.jpg" alt="Rajesh Sharma">
+                    </div>
+                    <h3>Rajesh Sharma</h3>
+                    <p class="mentor-title">Startup Advisor & Angel Investor</p>
+                    <div class="mentor-expertise">
+                        <span class="expertise-tag">Startups</span>
+                        <span class="expertise-tag">Funding</span>
+                        <span class="expertise-tag">Strategy</span>
+                    </div>
+                    <p class="mentor-bio">15+ years experience in building and scaling startups across fintech and e-commerce.</p>
+                    <a href="pages/mentorship/find-mentors.html" class="btn btn-outline btn-sm">View Profile</a>
+                </div>
+                
+                <div class="mentor-card animate-fadeIn">
+                    <div class="mentor-avatar">
+                        <img src="assets/images/avatars/mentor2.jpg" alt="Priya Patel">
+                    </div>
+                    <h3>Priya Patel</h3>
+                    <p class="mentor-title">Marketing Director & Growth Expert</p>
+                    <div class="mentor-expertise">
+                        <span class="expertise-tag">Marketing</span>
+                        <span class="expertise-tag">Branding</span>
+                        <span class="expertise-tag">Growth</span>
+                    </div>
+                    <p class="mentor-bio">Helped 50+ businesses develop effective marketing strategies and achieve 2-3x growth.</p>
+                    <a href="pages/mentorship/find-mentors.html" class="btn btn-outline btn-sm">View Profile</a>
+                </div>
+                
+                <div class="mentor-card animate-fadeIn">
+                    <div class="mentor-avatar">
+                        <img src="assets/images/avatars/mentor3.jpg" alt="Vikram Singh">
+                    </div>
+                    <h3>Vikram Singh</h3>
+                    <p class="mentor-title">Tech Entrepreneur & Product Specialist</p>
+                    <div class="mentor-expertise">
+                        <span class="expertise-tag">Technology</span>
+                        <span class="expertise-tag">Product</span>
+                        <span class="expertise-tag">SaaS</span>
+                    </div>
+                    <p class="mentor-bio">Founded 3 successful tech startups and specializes in product development and innovation.</p>
+                    <a href="pages/mentorship/find-mentors.html" class="btn btn-outline btn-sm">View Profile</a>
+                </div>
+                
+                <div class="mentor-card animate-fadeIn">
+                    <div class="mentor-avatar">
+                        <img src="assets/images/avatars/mentor4.jpg" alt="Ananya Desai">
+                    </div>
+                    <h3>Ananya Desai</h3>
+                    <p class="mentor-title">Finance Expert & Business Consultant</p>
+                    <div class="mentor-expertise">
+                        <span class="expertise-tag">Finance</span>
+                        <span class="expertise-tag">Accounting</span>
+                        <span class="expertise-tag">Investment</span>
+                    </div>
+                    <p class="mentor-bio">Former CFO with extensive experience in financial planning, fundraising, and business valuation.</p>
+                    <a href="pages/mentorship/find-mentors.html" class="btn btn-outline btn-sm">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="pages/mentorship/find-mentors.html" class="btn btn-primary">Explore All Mentors</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>Hear from entrepreneurs who have transformed their businesses with BizMitra</p>
+            </div>
+            
+            <div class="testimonials-slider" id="testimonials-slider">
+                <div class="testimonial-slide animate-fadeIn">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>Working with my mentor on BizMitra has been transformative for my business. Their guidance helped me increase my revenue by 85% in just six months. The structured approach and regular feedback made all the difference.</p>
+                        <div class="testimonial-author">
+                            <img src="assets/images/avatars/user1.jpg" alt="Amit Kumar">
+                            <div class="author-info">
+                                <h4>Amit Kumar</h4>
+                                <p>Founder, EcoFresh Foods</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>As a first-time entrepreneur, I was lost in the complexities of running a business. My mentor on BizMitra helped me navigate the challenges, set up proper systems, and scale my operations from local to national level within a year.</p>
+                        <div class="testimonial-author">
+                            <img src="assets/images/avatars/user2.jpg" alt="Sneha Reddy">
+                            <div class="author-info">
+                                <h4>Sneha Reddy</h4>
+                                <p>CEO, StyleHouse Boutique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>Finding the right mentor who understood my industry was a game-changer. Through BizMitra, I connected with an expert who helped me refine my business model, secure funding, and build a team that shares my vision.</p>
+                        <div class="testimonial-author">
+                            <img src="assets/images/avatars/user3.jpg" alt="Farhan Ahmed">
+                            <div class="author-info">
+                                <h4>Farhan Ahmed</h4>
+                                <p>Founder, TechSolve Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="control-btn prev-btn" id="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots" id="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="control-btn next-btn" id="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="section-cta">
+                <a href="pages/stories/stories-list.html" class="btn btn-outline">Read More Success Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <p>Join virtual and in-person events to learn, network, and grow your business</p>
+            </div>
+            
+            <div class="events-grid">
+                <div class="event-card animate-fadeIn">
+                    <div class="event-date">
+                        <div class="date-day">15</div>
+                        <div class="date-month">APR</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-type online">Online</div>
+                        <h3>Startup Funding Masterclass</h3>
+                        <div class="event-meta">
+                            <div class="meta-item"><i class="far fa-clock"></i> 3:00 PM - 5:00 PM IST</div>
+                            <div class="meta-item"><i class="fas fa-user"></i> By Rajesh Sharma</div>
+                        </div>
+                        <p>Learn how to prepare your startup for investment, create a compelling pitch, and approach the right investors.</p>
+                        <a href="pages/events/events-list.html" class="btn btn-outline btn-sm">Register Now</a>
+                    </div>
+                </div>
+                
+                <div class="event-card animate-fadeIn">
+                    <div class="event-date">
+                        <div class="date-day">22</div>
+                        <div class="date-month">APR</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-type in-person">In-Person</div>
+                        <h3>Networking Mixer: Entrepreneurs Connect</h3>
+                        <div class="event-meta">
+                            <div class="meta-item"><i class="far fa-clock"></i> 6:00 PM - 9:00 PM IST</div>
+                            <div class="meta-item"><i class="fas fa-map-marker-alt"></i> Mumbai</div>
+                        </div>
+                        <p>Connect with fellow entrepreneurs, potential mentors, and investors in a relaxed setting. Refreshments provided.</p>
+                        <a href="pages/events/events-list.html" class="btn btn-outline btn-sm">Register Now</a>
+                    </div>
+                </div>
+                
+                <div class="event-card animate-fadeIn">
+                    <div class="event-date">
+                        <div class="date-day">29</div>
+                        <div class="date-month">APR</div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-type online">Online</div>
+                        <h3>Digital Marketing for Small Businesses</h3>
+                        <div class="event-meta">
+                            <div class="meta-item"><i class="far fa-clock"></i> 2:00 PM - 4:00 PM IST</div>
+                            <div class="meta-item"><i class="fas fa-user"></i> By Priya Patel</div>
+                        </div>
+                        <p>Discover cost-effective marketing strategies to grow your online presence and attract more customers.</p>
+                        <a href="pages/events/events-list.html" class="btn btn-outline btn-sm">Register Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="pages/events/events-list.html" class="btn btn-primary">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content animate-fadeIn">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Join thousands of entrepreneurs who are accelerating their growth through expert mentorship</p>
+                <div class="cta-buttons">
+                    <a href="pages/auth/register.html" class="btn btn-primary">Get Started - It's Free</a>
+                    <a href="#" class="video-link" id="watch-video-btn">
+                        <div class="video-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span>Watch How It Works</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Partners</h2>
+                <p>Trusted by leading organizations in the entrepreneurship ecosystem</p>
+            </div>
+            
+            <div class="partners-logos">
+                <div class="partner-logo animate-fadeIn">
+                    <img src="assets/images/partners/partner1.png" alt="Partner 1">
+                </div>
+                <div class="partner-logo animate-fadeIn">
+                    <img src="assets/images/partners/partner2.png" alt="Partner 2">
+                </div>
+                <div class="partner-logo animate-fadeIn">
+                    <img src="assets/images/partners/partner3.png" alt="Partner 3">
+                </div>
+                <div class="partner-logo animate-fadeIn">
+                    <img src="assets/images/partners/partner4.png" alt="Partner 4">
+                </div>
+                <div class="partner-logo animate-fadeIn">
+                    <img src="assets/images/partners/partner5.png" alt="Partner 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="BizMitra Logo">
+                        <span>BizMitra</span>
+                    </div>
+                    <p>Your trusted companion in the entrepreneurial journey. Connect, learn, and grow with BizMitra.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/mentorship/find-mentors.html">Find Mentors</a></li>
+                        <li><a href="pages/forums/forum-list.html">Forums</a></li>
+                        <li><a href="pages/stories/stories-list.html">Success Stories</a></li>
+                        <li><a href="pages/events/events-list.html">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Startup Toolkit</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@bizmitra.com</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
+                    
+                    <div class="footer-newsletter">
+                        <h3>Subscribe to Our Newsletter</h3>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BizMitra. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#" class="back-to-top" id="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal video-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">How BizMitra Works</h3>
+                <button class="modal-close" id="close-video-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+    
+    <!-- Chatbot Interface -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chat-header">
+            <div class="bot-info">
+                <div class="bot-avatar">
+                    <img src="assets/images/logo.png" alt="BizMitra Bot">
+                </div>
+                <div>
+                    <div class="bot-name">BizMitra Assistant</div>
+                    <div class="bot-status">Online</div>
+                </div>
+            </div>
+            <button class="chat-close" id="chat-close"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="chat-body" id="chat-body">
+            <div class="chat-message bot-message">
+                <div>👋 Hi there! I'm the BizMitra assistant. How can I help you today?</div>
+                <span class="message-time">Just now</span>
+            </div>
+            
+            <div class="quick-replies">
+                <button class="quick-reply">Find a mentor</button>
+                <button class="quick-reply">How does mentorship work?</button>
+                <button class="quick-reply">Registration process</button>
+                <button class="quick-reply">Upcoming events</button>
+            </div>
+        </div>
+        
+        <div class="chat-footer">
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Type your message...">
+                <button class="chat-send" id="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/chatbot.js"></script>
+    
+    <!-- Check login status -->
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in (example - you'd use your auth logic)
+            const isLoggedIn = localStorage.getItem('auth_token');
+            
+            if (isLoggedIn) {
+                document.getElementById('auth-buttons').style.display = 'none';
+                document.getElementById('user-dropdown').style.display = 'block';
+                
+                // Get user data (example)
+                const userData = JSON.parse(localStorage.getItem('user_data')) || {};
+                document.getElementById('user-name').textContent = userData.name || 'User';
+                if (userData.avatar) {
+                    document.getElementById('user-avatar').src = userData.avatar;
+                }
+            }
+            
+            // Testimonial slider functionality
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.style.display = 'none');
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].style.display = 'block';
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            document.getElementById('next-testimonial').addEventListener('click', function() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            });
+            
+            document.getElementById('prev-testimonial').addEventListener('click', function() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    showSlide(index);
+                });
+            });
+            
+            // Initialize first slide
+            showSlide(0);
+            
+            // Video modal
+            const videoModal = document.getElementById('video-modal');
+            const watchVideoBtn = document.getElementById('watch-video-btn');
+            const closeVideoModal = document.getElementById('close-video-modal');
+            
+            watchVideoBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                videoModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeVideoModal.addEventListener('click', function() {
+                videoModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Chatbot toggle
+            const chatToggle = document.getElementById('chat-toggle');
+            const chatClose = document.getElementById('chat-close');
+            const chatbotContainer = document.getElementById('chatbot-container');
+            
+            chatToggle.addEventListener('click', function() {
+                chatbotContainer.classList.toggle('active');
+            });
+            
+            chatClose.addEventListener('click', function() {
+                chatbotContainer.classList.remove('active');
+            });
+            
+            // Quick replies
+            const quickReplies = document.querySelectorAll('.quick-reply');
+            
+            quickReplies.forEach(reply => {
+                reply.addEventListener('click', function() {
+                    const message = this.textContent;
+                    addUserMessage(message);
+                    
+                    // Simulate bot response (in a real app, this would call an API)
+                    setTimeout(() => {
+                        let response = '';
+                        
+                        if (message.includes('mentor')) {
+                            response = 'You can find mentors by visiting our "Find Mentors" page. There you can filter by industry, expertise, and even language preferences to find the perfect match!';
+                        } else if (message.includes('how')) {
+                            response = 'Our mentorship process is simple: 1) Create your profile, 2) Find and connect with mentors, 3) Schedule sessions and track your progress. All communication happens securely on our platform.';
+                        } else if (message.includes('registration')) {
+                            response = 'Registration is free and takes less than 5 minutes. Click on "Register" in the top menu, fill in your details, verify your email, and youre ready to go!';
+                        } else if (message.includes('events')) {
+                            response = 'We have several exciting events coming up! Check out the Events page for details on our upcoming webinars, workshops, and networking mixers.';
+                        } else {
+                            response = 'Thank you for your message. How else can I assist you today?';
+                        }
+                        
+                        addBotMessage(response);
+                    }, 1000);
+                });
+            });
+            
+            // Send message
+            const chatInput = document.getElementById('chat-input');
+            const chatSend = document.getElementById('chat-send');
+            
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    addUserMessage(message);
+                    chatInput.value = '';
+                    
+                    // Simple bot response (would be replaced with actual chatbot logic)
+                    setTimeout(() => {
+                        addBotMessage('Thank you for your message. A member of our team will get back to you shortly.');
+                    }, 1000);
+                }
+            }
+            
+            chatSend.addEventListener('click', sendMessage);
+            
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            function addUserMessage(message) {
+                const chatBody = document.getElementById('chat-body');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'chat-message user-message';
+                
+                const now = new Date();
+                const timeStr = now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+                
+                messageDiv.innerHTML = `
+                    <div>${message}</div>
+                    <span class="message-time">${timeStr}</span>
+                `;
+                
+                chatBody.appendChild(messageDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+            
+            function addBotMessage(message) {
+                const chatBody = document.getElementById('chat-body');
+                
+                // Show typing indicator
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'bot-typing';
+                typingDiv.innerHTML = `
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                `;
+                chatBody.appendChild(typingDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+                
+                // After delay, remove typing indicator and show message
+                setTimeout(() => {
+                    chatBody.removeChild(typingDiv);
+                    
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = 'chat-message bot-message';
+                    
+                    const now = new Date();
+                    const timeStr = now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+                    
+                    messageDiv.innerHTML = `
+                        <div>${message}</div>
+                        <span class="message-time">${timeStr}</span>
+                    `;
+                    
+                    chatBody.appendChild(messageDiv);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1500);
+            }
+            
+            // Back to top
+            const backToTop = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animation on scroll
+            function checkScroll() {
+                const elements = document.querySelectorAll('.animate-fadeIn, .animate-slideUp');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.classList.add('animated');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Check on page load
+        });
+    </script> -->
+</body>
+</html>

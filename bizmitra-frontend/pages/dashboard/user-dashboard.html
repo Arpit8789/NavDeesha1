@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrepreneur Dashboard | BizMitra</title>
+    <meta name="description" content="Manage your entrepreneurial journey with BizMitra Dashboard">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                    <li><a href="../forums/forum-list.html">Forums</a></li>
+                    <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                    <li><a href="../events/events-list.html">Events</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+                
+                <div class="user-dropdown">
+                    <div class="user-dropdown-toggle">
+                        <img id="user-avatar" src="../../assets/images/avatars/default.png" alt="User Avatar" class="user-avatar">
+                        <span id="user-name">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown-menu">
+                        <a href="user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                        <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                <li><a href="../forums/forum-list.html">Forums</a></li>
+                <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                <li><a href="../events/events-list.html">Events</a></li>
+                <li class="mobile-user-menu">
+                    <a href="user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                    <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                    <a href="#" id="mobile-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <div class="dashboard-welcome">
+                <div class="welcome-content">
+                    <h1>Welcome, <span id="welcome-name">Entrepreneur</span>!</h1>
+                    <p>Track your progress, manage connections, and grow your business</p>
+                </div>
+                <div class="welcome-actions">
+                    <a href="../mentorship/find-mentors.html" class="btn btn-primary">Find a Mentor</a>
+                    <a href="../forums/create-post.html" class="btn btn-outline">Ask a Question</a>
+                </div>
+            </div>
+            
+            <!-- Profile Completion Card -->
+            <div class="profile-completion-card" id="completion-prompt">
+                <div class="completion-header">
+                    <h3>Complete Your Profile</h3>
+                    <p>A completed profile increases your chances of finding the right mentor</p>
+                </div>
+                <div class="completion-progress">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="profile-progress" style="width: 30%;"></div>
+                    </div>
+                    <p id="profile-completion">30% Complete</p>
+                </div>
+                <a href="../profile/edit-profile.html" class="btn btn-primary">Complete Profile</a>
+            </div>
+            
+            <!-- Dashboard Stats -->
+            <div class="dashboard-stats" id="dashboard-stats">
+                <!-- Stats will be loaded dynamically -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+            
+            <!-- Dashboard Tabs -->
+            <div class="dashboard-tabs">
+                <div class="tabs-header">
+                    <a href="#mentor-suggestions" class="tab-link active" data-tab="mentor-suggestions">Mentor Suggestions</a>
+                    <a href="#pending-requests" class="tab-link" data-tab="pending-requests">Pending Requests</a>
+                    <a href="#upcoming-events" class="tab-link" data-tab="upcoming-events">Upcoming Events</a>
+                    <a href="#active-conversations" class="tab-link" data-tab="active-conversations">Active Conversations</a>
+                </div>
+                
+                <div class="tabs-content">
+                    <!-- Mentor Suggestions Tab -->
+                    <div id="mentor-suggestions" class="tab-content active">
+                        <div class="content-header">
+                            <h2>Recommended Mentors for You</h2>
+                            <a href="../mentorship/find-mentors.html" class="btn btn-outline btn-sm">See All Mentors</a>
+                        </div>
+                        <div class="mentor-suggestions-content">
+                            <!-- Mentor suggestions will be loaded dynamically -->
+                            <div class="loading-spinner">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pending Requests Tab -->
+                    <div id="pending-requests" class="tab-content">
+                        <div class="content-header">
+                            <h2>Your Pending Connection Requests</h2>
+                        </div>
+                        <div class="pending-requests-content">
+                            <!-- Pending requests will be loaded dynamically -->
+                            <div class="loading-spinner">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Upcoming Events Tab -->
+                    <div id="upcoming-events" class="tab-content">
+                        <div class="content-header">
+                            <h2>Upcoming Events</h2>
+                            <a href="../events/events-list.html" class="btn btn-outline btn-sm">See All Events</a>
+                        </div>
+                        <div class="upcoming-events-content">
+                            <!-- Upcoming events will be loaded dynamically -->
+                            <div class="loading-spinner">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Active Conversations Tab -->
+                    <div id="active-conversations" class="tab-content">
+                        <div class="content-header">
+                            <h2>Active Conversations</h2>
+                        </div>
+                        <div class="active-conversations-content">
+                            <!-- Active conversations will be loaded dynamically -->
+                            <div class="loading-spinner">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Forum Activity -->
+            <div class="recent-activity">
+                <div class="content-header">
+                    <h2>Recent Forum Activity</h2>
+                    <a href="../forums/forum-list.html" class="btn btn-outline btn-sm">Visit Forums</a>
+                </div>
+                <div class="recent-activity-content">
+                    <!-- Recent activity will be loaded dynamically -->
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                        <span>BizMitra</span>
+                    </div>
+                    <p>Your trusted companion in the entrepreneurial journey. Connect, learn, and grow with BizMitra.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                        <li><a href="../forums/forum-list.html">Forums</a></li>
+                        <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                        <li><a href="../events/events-list.html">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Startup Toolkit</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@bizmitra.com</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BizMitra. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    <script src="../../js/chatbot.js"></script>
+</body>
+</html>

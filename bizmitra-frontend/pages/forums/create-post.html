@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Discussion | BizMitra</title>
+    <meta name="description" content="Start a new discussion on BizMitra Forums">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/forums.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="WhatsApp Image 2025-03-21 at 04.22.56_d40f2627 - Copy (2).jpg" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                    <li><a href="forum-list.html" class="active">Forums</a></li>
+                    <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                    <li><a href="../events/events-list.html">Events</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-menu">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+                
+                <div class="user-dropdown">
+                    <div class="user-dropdown-toggle">
+                        <img id="user-avatar" src="../../assets/images/avatars/default.png" alt="User Avatar" class="user-avatar">
+                        <span id="user-name">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown-menu">
+                        <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                        <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                <li><a href="forum-list.html" class="active">Forums</a></li>
+                <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                <li><a href="../events/events-list.html">Events</a></li>
+                <li class="mobile-user-menu">
+                    <a href="../dashboard/user-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="../profile/edit-profile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                    <a href="../mentorship/my-connections.html"><i class="fas fa-users"></i> My Connections</a>
+                    <a href="#" id="mobile-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container create-post-container">
+            <div class="post-breadcrumb">
+                <a href="forum-list.html">Forums</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Create Discussion</span>
+            </div>
+            
+            <div class="create-post-content">
+                <h1>Start a New Discussion</h1>
+                <p>Share your question, idea, or discussion topic with the BizMitra community</p>
+                
+                <form id="create-post-form" class="create-post-form">
+                    <div class="form-group">
+                        <label for="post-title">Title</label>
+                        <input type="text" id="post-title" class="form-control" placeholder="Enter a clear, specific title for your discussion" required>
+                        <div class="character-count"><span id="title-count">0</span>/100</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post-category">Category</label>
+                        <select id="post-category" class="form-select" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="finance">Finance</option>
+                            <option value="technology">Technology</option>
+                            <option value="operations">Operations</option>
+                            <option value="legal">Legal</option>
+                            <option value="human-resources">Human Resources</option>
+                            <option value="product-development">Product Development</option>
+                            <option value="sales">Sales</option>
+                            <option value="general">General Discussion</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post-content">Content</label>
+                        <div class="editor-toolbar">
+                            <button type="button" class="toolbar-btn" data-format="bold"><i class="fas fa-bold"></i></button>
+                            <button type="button" class="toolbar-btn" data-format="italic"><i class="fas fa-italic"></i></button>
+                            <button type="button" class="toolbar-btn" data-format="underline"><i class="fas fa-underline"></i></button>
+                            <button type="button" class="toolbar-btn" data-format="bullet"><i class="fas fa-list-ul"></i></button>
+                            <button type="button" class="toolbar-btn" data-format="number"><i class="fas fa-list-ol"></i></button>
+                            <button type="button" class="toolbar-btn" data-format="link"><i class="fas fa-link"></i></button>
+                        </div>
+                        <textarea id="post-content" class="form-control editor-content" rows="10" placeholder="Describe your question or topic in detail..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post-tags">Tags</label>
+                        <div class="tag-input">
+                            <input type="text" id="post-tags" placeholder="Type and press Enter to add tags">
+                            <div class="tag-list" id="tag-list">
+                                <!-- Tags will be added dynamically -->
+                            </div>
+                            <input type="hidden" id="tags-input" name="tags">
+                        </div>
+                        <small class="form-text">Add relevant tags to help others find your discussion (e.g., startup, funding, marketing)</small>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" onclick="window.location.href='forum-list.html'">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Discussion</button>
+                    </div>
+                </form>
+                
+                <div class="posting-guidelines">
+                    <h3>Posting Guidelines</h3>
+                    <ul>
+                        <li>Be specific and clear about your question or topic</li>
+                        <li>Provide relevant details and context</li>
+                        <li>Be respectful and constructive</li>
+                        <li>Check if your question has already been asked</li>
+                        <li>Format your post for readability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                        <span>BizMitra</span>
+                    </div>
+                    <p>Your trusted companion in the entrepreneurial journey. Connect, learn, and grow with BizMitra.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../mentorship/find-mentors.html">Find Mentors</a></li>
+                        <li><a href="forum-list.html">Forums</a></li>
+                        <li><a href="../stories/stories-list.html">Success Stories</a></li>
+                        <li><a href="../events/events-list.html">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Startup Toolkit</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@bizmitra.com</p>
+                    <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangalore, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BizMitra. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/forums.js"></script>
+    <script src="../../js/chatbot.js"></script>
+</body>
+</html>

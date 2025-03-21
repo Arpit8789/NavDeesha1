@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | BizMitra</title>
+    <meta name="description" content="Create your BizMitra account - Your Business Friend">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/auth.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-body">
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <div class="auth-buttons">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Create Your Account</h1>
+                    <p>Join BizMitra and start your growth journey</p>
+                </div>
+                
+                <div class="role-selection">
+                    <h3>I am a:</h3>
+                    <div class="role-options">
+                        <div class="role-option" data-role="user">
+                            <div class="role-icon">
+                                <img src="../../assets/icons/user.svg" alt="Entrepreneur">
+                            </div>
+                            <div class="role-info">
+                                <h4>Entrepreneur</h4>
+                                <p>Looking for guidance and connections</p>
+                            </div>
+                        </div>
+                        <div class="role-option" data-role="mentor">
+                            <div class="role-icon">
+                                <img src="../../assets/icons/mentor.svg" alt="Mentor">
+                            </div>
+                            <div class="role-info">
+                                <h4>Mentor</h4>
+                                <p>Willing to guide entrepreneurs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fas fa-user"></i></span>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fas fa-phone"></i></span>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fas fa-lock"></i></span>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Create a strong password" required>
+                            <span class="password-toggle" id="password-toggle"><i class="fas fa-eye"></i></span>
+                        </div>
+                        <div class="password-strength" id="password-strength">
+                            <div class="strength-meter">
+                                <div class="strength-meter-fill" data-strength="0"></div>
+                            </div>
+                            <div class="strength-text">Password strength: <span>Weak</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-check terms-check">
+                        <input type="checkbox" id="terms" name="terms" class="form-check-input" required>
+                        <label for="terms" class="form-check-label">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                    
+                    <input type="hidden" id="role" name="role" value="user">
+                    
+                    <button type="submit" class="btn btn-primary btn-block register-btn">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html">Login</a></p>
+                </div>
+            </div>
+            
+            <div class="auth-illustration">
+                <img src="../../assets/illustrations/register-illustration.svg" alt="Register Illustration">
+                <div class="auth-quote">
+                    <p>"Every great achievement begins with the decision to try."</p>
+                    <span>— Anonymous</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="auth-footer-bar">
+        <div class="container">
+            <p>&copy; 2025 BizMitra. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Help Center</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/utils/validation.js"></script>
+</body>
+</html>

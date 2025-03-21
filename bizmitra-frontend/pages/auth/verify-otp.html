@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP | BizMitra</title>
+    <meta name="description" content="Verify your account with OTP - BizMitra">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/auth.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-body">
+    <!-- Header -->
+    <header id="main-header" class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../assets/images/logo.png" alt="BizMitra Logo">
+                    <span>BizMitra</span>
+                </a>
+            </div>
+            
+            <div class="auth-buttons">
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Verify Your Account</h1>
+                    <p>We've sent a verification code to your email</p>
+                </div>
+                
+                <div class="email-notification">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <p>An OTP has been sent to <span id="user-email">your email</span></p>
+                </div>
+                
+                <form id="otp-form" class="auth-form">
+                    <div class="otp-container">
+                        <div class="otp-inputs">
+                            <input type="text" class="otp-input" maxlength="1" autofocus>
+                            <input type="text" class="otp-input" maxlength="1">
+                            <input type="text" class="otp-input" maxlength="1">
+                            <input type="text" class="otp-input" maxlength="1">
+                            <input type="text" class="otp-input" maxlength="1">
+                            <input type="text" class="otp-input" maxlength="1">
+                        </div>
+                        <input type="hidden" id="otp" name="otp">
+                    </div>
+                    
+                    <div class="otp-timer">
+                        <p>Code expires in <span id="timer">10:00</span></p>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block verify-btn">
+                        <span class="btn-text">Verify & Continue</span>
+                        <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>Didn't receive the code? <a href="#" id="resend-otp">Resend OTP</a></p>
+                    <p><a href="register.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Registration</a></p>
+                </div>
+            </div>
+            
+            <div class="auth-illustration">
+                <img src="../../assets/illustrations/verify-illustration.svg" alt="Verification Illustration">
+                <div class="auth-quote">
+                    <p>"Success is where preparation and opportunity meet."</p>
+                    <span>— Bobby Unser</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="auth-footer-bar">
+        <div class="container">
+            <p>&copy; 2025 BizMitra. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Help Center</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/api.js"></script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+/* ========= MODAL COMPONENTS STYLES ========= */
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Base Modal */
+  .modal {
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-overlay.active .modal {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  /* Modal Header */
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    background: linear-gradient(135deg, #4361ee, #4cc9f0);
+    color: white;
+  }
+  
+  .modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Modal Body */
+  .modal-body {
+    padding: 25px;
+  }
+  
+  /* Modal Footer */
+  .modal-footer {
+    padding: 20px 25px;
+    background-color: #f8fafc;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  /* Modal Buttons */
+  .modal-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-btn-primary {
+    background: linear-gradient(90deg, #4361ee, #4cc9f0);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+  }
+  
+  .modal-btn-primary:hover {
+    box-shadow: 0 6px 15px rgba(67, 97, 238, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  .modal-btn-secondary {
+    background-color: transparent;
+    color: #4361ee;
+    border: 1px solid #4361ee;
+  }
+  
+  .modal-btn-secondary:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+  }
+  
+  /* Different Modal Sizes */
+  .modal-sm {
+    max-width: 400px;
+  }
+  
+  .modal-lg {
+    max-width: 700px;
+  }
+  
+  .modal-xl {
+    max-width: 900px;
+  }
+  
+  .modal-fullscreen {
+    max-width: 95%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-fullscreen .modal-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  /* Custom Modal Types */
+  
+  /* Confirmation Modal */
+  .confirm-modal .modal-body {
+    text-align: center;
+    padding: 30px 25px;
+  }
+  
+  .confirm-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  .confirm-icon.warning {
+    color: #ff9800;
+  }
+  
+  .confirm-icon.success {
+    color: #4caf50;
+  }
+  
+  .confirm-icon.error {
+    color: #f44336;
+  }
+  
+  .confirm-icon.info {
+    color: #2196f3;
+  }
+  
+  .confirm-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1a202c;
+  }
+  
+  .confirm-message {
+    color: #718096;
+    margin-bottom: 25px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  /* Image Modal */
+  .image-modal .modal-body {
+    padding: 0;
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .image-caption {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  /* Video Modal */
+  .video-modal {
+    max-width: 800px;
+  }
+  
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .video-container iframe,
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  /* Form Modal */
+  .form-modal .modal-body {
+    padding: 30px;
+  }
+  
+  /* Login Modal */
+  .login-modal {
+    max-width: 400px;
+  }
+  
+  .login-modal .modal-header {
+    text-align: center;
+    display: block;
+    padding: 30px 25px 20px;
+  }
+  
+  .login-modal .modal-logo {
+    margin-bottom: 15px;
+  }
+  
+  .login-modal .modal-logo img {
+    height: 50px;
+    width: auto;
+  }
+  
+  .login-modal .modal-title {
+    margin-bottom: 10px;
+  }
+  
+  .login-modal .modal-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .social-login-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    color: white;
+  }
+  
+  .google-btn {
+    background-color: #DB4437;
+  }
+  
+  .facebook-btn {
+    background-color: #4267B2;
+  }
+  
+  .linkedin-btn {
+    background-color: #0077B5;
+  }
+  
+  .social-login-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+  
+  .login-divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #a0aec0;
+    font-size: 14px;
+  }
+  
+  .login-divider::before,
+  .login-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #e2e8f0;
+  }
+  
+  .login-divider::before {
+    margin-right: 15px;
+  }
+  
+  .login-divider::after {
+    margin-left: 15px;
+  }
+  
+  /* Slide-in Modal */
+  .slide-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 400px;
+    background-color: #fff;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .slide-modal.active {
+    transform: translateX(0);
+  }
+  
+  .slide-modal-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .slide-modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+  }
+  
+  .slide-modal-body {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .slide-modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background-color: #f8fafc;
+  }
+  
+  /* Bottom Sheet Modal */
+  .bottom-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
+  }
+  
+  .bottom-sheet.active {
+    transform: translateY(0);
+  }
+  
+  .sheet-handle {
+    width: 40px;
+    height: 5px;
+    background-color: #cbd5e0;
+    border-radius: 3px;
+    margin: 10px auto;
+  }
+  
+  .sheet-content {
+    padding: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  /* Tooltip */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Modal Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .modal-fade .modal {
+    animation: fadeIn 0.3s ease forwards;
+  }
+  
+  .modal-slide .modal {
+    animation: slideUp 0.4s ease forwards;
+  }
+  
+  .modal-zoom .modal {
+    animation: zoomIn 0.4s ease forwards;
+  }
+  
